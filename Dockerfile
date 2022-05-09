@@ -1,5 +1,10 @@
 # Container image that runs your code
-FROM alpine:3.10
+FROM curlimages/curl
+
+# Install GitHub CLI
+USER root
+COPY /lib/install.sh /lib/install.sh
+RUN ["sh", "/lib/install.sh"]
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh

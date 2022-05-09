@@ -1,21 +1,15 @@
-# Hello world docker action
+# Fetch random repo name
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action is useful for running actions against random repositories (e.g. leak scanner, etc.)
 
 ## Inputs
 
-## `who-to-greet`
+`github-token`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Token used to authenticate with GitHub
 
 ## Outputs
 
-## `time`
+`repo`
 
-The time we greeted you.
-
-## Example usage
-
-uses: josiahsiegel/hello-world-docker-action@v1
-with:
-  who-to-greet: 'Mona the Octocat'
+The name of the random repo.

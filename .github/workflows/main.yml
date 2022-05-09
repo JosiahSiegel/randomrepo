@@ -1,19 +1,18 @@
+name: Fetch Random Repo Name
+
 on: [push]
 
 jobs:
-  hello_world_job:
+  test_run:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to fetch a random repo name
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
-        id: hello
+      - name: Fetch random repo name
+        uses: ./
+        id: random
         with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get the repo name
+        run: echo "The time was ${{ steps.random.outputs.repo }}"
