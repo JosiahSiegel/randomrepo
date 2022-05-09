@@ -15,4 +15,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Get the repo name
-        run: echo "The time was ${{ steps.random.outputs.repo }}"
+        run: |
+          echo "Random repo name: ${{ steps.random.outputs.repo }}"
