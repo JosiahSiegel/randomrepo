@@ -1,9 +1,9 @@
 # action.yml
-name: 'randomrepo'
+name: 'randomrepo-action'
 description: 'Fetch name of a random GitHub repository'
 branding:
   icon: 'search'  
-  color: 'yello'
+  color: 'yellow'
 inputs:
   github-token:
     description: 'Token used to login to GitHub'
