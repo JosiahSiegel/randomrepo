@@ -20,5 +20,5 @@ repo=$(gh search repos $random \
 --json fullName,updatedAt,url,pushedAt \
 --jq '.[].fullName')
 
-echo "::set-output name=repo::$repo"
+echo "repo=$repo" >> $GITHUB_OUTPUT
 echo $repo
